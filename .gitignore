@@ -1,1 +1,16 @@
-obj
+bin/
+obj/
+
+.vscode/
+.idea/
+*.user
+*.suo
+
+packages/
+*.nupkg
+
+.DS_Store
+Thumbs.db
+
+heranca/
+sobrescrita/

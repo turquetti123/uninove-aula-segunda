@@ -1,0 +1,13 @@
+public class IrrfService
+{
+    public double CalcularIrrf(double salarioBruto, double descontoInss)
+    {
+        double salarioBase = salarioBruto - descontoInss;
+
+        IrrfFaixa faixa = TabelaIrrf.ObterFaixa(salarioBase);
+
+        double imposto = salarioBase * faixa.Aliquota - faixa.Deducao;
+
+        return imposto < 0 ? 0 : Math.Round(imposto, 2);
+    }
+}

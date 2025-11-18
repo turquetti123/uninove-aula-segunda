@@ -1,0 +1,13 @@
+class Program
+{
+    static void Main()
+    {
+        double salarioBruto = 3000.00;
+        double descontoInss = 258.83;
+
+        IrrfService service = new IrrfService();
+        double irrf = service.CalcularIrrf(salarioBruto, descontoInss);
+
+        Console.WriteLine("IRRF calculado: " + irrf);
+    }
+}

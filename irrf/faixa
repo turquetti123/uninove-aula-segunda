@@ -1,0 +1,20 @@
+public class IrrfFaixa
+{
+    public double LimiteMin { get; }
+    public double LimiteMax { get; }
+    public double Aliquota { get; }
+    public double Deducao { get; }
+
+    public IrrfFaixa(double limiteMin, double limiteMax, double aliquota, double deducao)
+    {
+        LimiteMin = limiteMin;
+        LimiteMax = limiteMax;
+        Aliquota = aliquota;
+        Deducao = deducao;
+    }
+
+    public bool Pertence(double salarioBase)
+    {
+        return salarioBase >= LimiteMin && salarioBase <= LimiteMax;
+    }
+}

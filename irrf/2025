@@ -1,0 +1,19 @@
+using System.Collections.Generic;
+using System.Linq;
+
+public static class TabelaIrrf
+{
+    public static List<IrrfFaixa> Faixas = new List<IrrfFaixa>
+    {
+        new IrrfFaixa(0,        2259.20, 0.00, 0.00),
+        new IrrfFaixa(2259.21,  2826.65, 0.075, 169.44),
+        new IrrfFaixa(2826.66,  3751.05, 0.15,  381.44),
+        new IrrfFaixa(3751.06,  4664.68, 0.225, 662.77),
+        new IrrfFaixa(4664.69,  double.MaxValue, 0.275, 896.00)
+    };
+
+    public static IrrfFaixa ObterFaixa(double salarioBase)
+    {
+        return Faixas.First(f => f.Pertence(salarioBase));
+    }
+}
